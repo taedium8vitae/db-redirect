@@ -18,19 +18,17 @@ foreach ($entries[1] as $entry) {
     $v2_entries = $entry;
 }
 if($v1_entries > $v2_entries) {
-    //header("Location: link to v2");
-    //die();
-    echo "v2";
     $sqlQuery = 'UPDATE entries_nb SET entries = entries + 1 WHERE id = 2';
         $insertEntry = $mysqlClient->prepare($sqlQuery);
         $insertEntry->execute();
+        header("Location: https://forms.gle/j1fYBscxF7RdcxR17");
+        die();
 }elseif($v2_entries > $v1_entries) {
     $sqlQuery = 'UPDATE entries_nb SET entries = entries + 1 WHERE id = 1';
         $insertEntry = $mysqlClient->prepare($sqlQuery);
         $insertEntry->execute();
-    //header("Location: link to v1");
-    //die();
-    echo "v1";
+    header("Location: https://forms.gle/Y7SGS729HkRu3Edf9");
+    die();
 }else{
     $rand_v = rand(1, 2);
     echo "v".$rand_v." (random)";
@@ -38,13 +36,13 @@ if($v1_entries > $v2_entries) {
         $sqlQuery = 'UPDATE entries_nb SET entries = entries + 1 WHERE id = 1';
         $insertEntry = $mysqlClient->prepare($sqlQuery);
         $insertEntry->execute();
-        //header("Location: link to v1");
-        //die();
+        header("Location: https://forms.gle/Y7SGS729HkRu3Edf9");
+        die();
     }else{
         $sqlQuery = 'UPDATE entries_nb SET entries = entries + 1 WHERE id = 2';
         $insertEntry = $mysqlClient->prepare($sqlQuery);
         $insertEntry->execute();
-        //header("Location: link to v2");
-        //die();
+        header("Location: https://forms.gle/j1fYBscxF7RdcxR17");
+        die();
     }
 }

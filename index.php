@@ -33,7 +33,6 @@ if($v1_entries > $v2_entries) {
     die();
 }else{
     $rand_v = rand(1, 2);
-    echo "v".$rand_v." (random)";
     if($rand_v == 1) {
         $sqlQuery = 'UPDATE entries_nb SET entries = entries + 1 WHERE id = 1';
         $insertEntry = $mysqlClient->prepare($sqlQuery);

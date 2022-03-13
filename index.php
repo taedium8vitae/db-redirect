@@ -1,7 +1,9 @@
 <?php
 try
 {
-	$mysqlClient = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', 'root');
+	$mysqlClient = new PDO('mysql:host=localhost;dbname=poll;charset=utf8',
+    'root',
+    'root');
 }
 catch(Exception $e)
 {
